@@ -29,7 +29,3 @@ WHERE  d.id_public = '3843GM' --id_driver should be searchable
                                       timestamp '2019-08-03 00:00:00.000' 
 GROUP  BY rollup ( bp.completion_date ) 
 ORDER  BY completion_date DESC 
-
-
--- Change the name of bottom row of completion_date from 'NULL' to 'Total'
--- Remove duplicate values in bottom row or change the name to 'Total'	
