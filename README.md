@@ -1,9 +1,11 @@
-# Generating an Annual Statement using SQL
+# Annual Statement Generator
 
-An example of a piece of work I completed at my previous employer.
+This project was developed to automate the generation of Annual Statements for a Taxi fleet. It was designed to improve customer support efficiency by eliminating manual effort in producing these statements.
 
-Aim:
-To improve our customer support efficiency, by being able to automatically generate Annual Statements for our Taxi fleet.
+## Objective
+Reduce the time spent on generating statements from five minutes per driver to a fully automated process.
 
-The process to provide an Annual Statement took approximately five minutes per statement.
-The attached code was designed to be run in Metabase, download the result as a .csv and send to the appropriate driver.
+## How It Works
+- The SQL code generates the required data in Metabase.
+- The results are downloaded as a CSV.
+- The CSV is then sent to the appropriate driver.
