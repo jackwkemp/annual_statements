@@ -13,7 +13,7 @@ SELECT bp.completion_date                 AS completion_date,
              (bp.last_attempt_payment_value - bp.last_attempt_payment_value * 0.9) / bp.last_attempt_payment_value * 100
              WHEN completion_date > timestamp '2019-07-31 00:00:00.000' THEN
              (bp.last_attempt_payment_value - bp.last_attempt_payment_value * 0.85) / bp.last_attempt_payment_value * 100
-		   END)                           AS commission_percentage,
+           END)                           AS commission_percentage,
        SUM(CASE 
              WHEN completion_date < timestamp '2019-07-31 00:00:00.000' THEN 
              bp.last_attempt_payment_value * 0.9 
@@ -23,9 +23,9 @@ SELECT bp.completion_date                 AS completion_date,
 FROM   dm.fact_booking_payment bp 
        join dm.dim_driver d 
          ON bp.id_driver = d.id 
-WHERE  d.id_public = '3843GM' --id_driver should be searchable     
+WHERE  d.id_public = 'XXXX' -- Driver ID anonymized     
        AND bp.is_completed = TRUE 
        AND bp.completion_date BETWEEN timestamp '2019-07-28 00:00:00.000' AND 
                                       timestamp '2019-08-03 00:00:00.000' 
 GROUP  BY rollup ( bp.completion_date ) 
-ORDER  BY completion_date DESC 
+ORDER  BY completion_date DESC
